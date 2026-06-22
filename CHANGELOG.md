@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.1-beta - 2026-06-22
+
+### Fixed
+
+- Long titles and summaries now wrap automatically by default instead of overflowing the panel.
+
+### Added
+
+- New setting for long text behaviour: automatic wrapping or horizontal scrolling.
+
 ## 1.0.0-beta - 2026-06-22
 
 ### Added

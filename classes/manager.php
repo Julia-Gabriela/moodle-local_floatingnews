@@ -229,6 +229,8 @@ class manager {
         $showdots = self::get_bool_config('showdots', true) && !in_array($layout, ['feed', 'ticker'], true);
         $opennewtab = self::get_bool_config('opennewtab', true);
         $shadowclass = self::get_bool_config('showshadow', true) ? '' : ' local-floatingnews-no-shadow';
+        $textoverflow = get_config('local_floatingnews', 'textoverflow') ?: 'wrap';
+        $textoverflowclass = $textoverflow === 'scroll' ? ' local-floatingnews-text-scroll' : ' local-floatingnews-text-wrap';
 
         $cards = [];
         $dots = [];
@@ -282,7 +284,7 @@ class manager {
 
         $html = html_writer::start_tag('aside', [
             'id' => 'local-floatingnews-panel',
-            'class' => 'local-floatingnews-panel ' . $positionclass . ' local-floatingnews-layout-' . $layout . $shadowclass,
+            'class' => 'local-floatingnews-panel ' . $positionclass . ' local-floatingnews-layout-' . $layout . $shadowclass . $textoverflowclass,
             'aria-label' => s($paneltitle),
             'style' => self::get_inline_style(),
             'data-layout' => $layout,

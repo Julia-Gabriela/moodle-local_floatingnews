@@ -312,3 +312,53 @@
 .local-floatingnews-navitem .local-floatingnews-navlink {
     font-weight: 700;
 }
+
+/* Long text handling.
+   The default mode prevents long words/URLs from forcing a horizontal overflow.
+   Admins can switch to horizontal scroll mode in plugin settings when they prefer one-line text. */
+.local-floatingnews-panel,
+.local-floatingnews-panel * {
+    box-sizing: border-box;
+}
+
+.local-floatingnews-item,
+.local-floatingnews-heading,
+.local-floatingnews-title,
+.local-floatingnews-summary,
+.local-floatingnews-link {
+    max-width: 100%;
+    min-width: 0;
+}
+
+.local-floatingnews-text-wrap .local-floatingnews-heading,
+.local-floatingnews-text-wrap .local-floatingnews-title,
+.local-floatingnews-text-wrap .local-floatingnews-summary,
+.local-floatingnews-text-wrap .local-floatingnews-summary *,
+.local-floatingnews-text-wrap .local-floatingnews-link {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.local-floatingnews-text-wrap .local-floatingnews-item {
+    overflow-x: hidden;
+}
+
+.local-floatingnews-text-scroll .local-floatingnews-title,
+.local-floatingnews-text-scroll .local-floatingnews-summary,
+.local-floatingnews-text-scroll .local-floatingnews-summary * {
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overflow-wrap: normal;
+    word-break: normal;
+    white-space: nowrap;
+    scrollbar-width: thin;
+}
+
+.local-floatingnews-text-scroll .local-floatingnews-link {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+

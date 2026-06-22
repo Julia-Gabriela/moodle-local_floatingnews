@@ -106,6 +106,17 @@ if ($hassiteconfig) {
         1
     ));
 
+    $settings->add(new admin_setting_configselect(
+        'local_floatingnews/textoverflow',
+        get_string('textoverflow', 'local_floatingnews'),
+        get_string('textoverflow_desc', 'local_floatingnews'),
+        'wrap',
+        [
+            'wrap' => get_string('textoverflow_wrap', 'local_floatingnews'),
+            'scroll' => get_string('textoverflow_scroll', 'local_floatingnews'),
+        ]
+    ));
+
     $settings->add(new admin_setting_configcheckbox(
         'local_floatingnews/pauseonhover',
         get_string('pauseonhover', 'local_floatingnews'),
